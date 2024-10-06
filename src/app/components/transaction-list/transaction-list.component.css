@@ -1,0 +1,12 @@
+.transaction-list {
+    border: 1px solid #ccc;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 8px;
+  }
+  
+  .transaction {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }

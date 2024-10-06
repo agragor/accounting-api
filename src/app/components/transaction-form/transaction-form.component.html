@@ -1,0 +1,21 @@
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+  <div  class="transaction-form">
+  <h4>Submit new transaction</h4>
+  <div>
+    <label for="account_id">Account ID:</label><br>
+    <input id="account_id" formControlName="account_id" />
+    <div *ngIf="transactionForm.get('account_id')?.invalid && transactionForm.get('account_id')?.touched">
+      <small *ngIf="getAccountIdError()">{{ getAccountIdError() }}</small>
+    </div>
+  </div>
+  <br>
+  <div>
+    <label for="amount">Amount:</label><br>
+    <input id="amount" formControlName="amount" type="number" />
+    <div *ngIf="transactionForm.get('amount')?.invalid && transactionForm.get('amount')?.touched">
+      <small *ngIf="getAmountError()">{{ getAmountError() }}</small>
+    </div>
+  </div><br>
+  <button type="submit" [disabled]="transactionForm.invalid">Submit</button>
+</div>
+</form>

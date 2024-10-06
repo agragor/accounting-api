@@ -1,0 +1,20 @@
+<div class="transaction-list">
+    <h2>Transaction History</h2>
+    <div class="transaction-info">
+        <h3>Transaction Amount (Withdrawal)</h3>
+        <p *ngIf="lastTransaction">
+          Transferred {{ lastTransaction.amount }}$ from account {{ lastTransaction.account_id }}.
+        </p>
+        <p *ngIf="lastTransaction">
+          The current account balance is {{ currentBalance }}$.
+        </p>
+      </div>
+    <div class="transaction">
+        <h3>Transaction amount (deposit)</h3>
+        <div *ngFor="let transaction of transactions">
+            <p>
+                Transferred {{ transaction.amount }}$ to account {{ transaction.account_id }}.
+            </p>
+        </div>
+    </div>  
+</div>
